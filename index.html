@@ -5,43 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- CSS rel="stylesheet" href="./src/style/style.css" />
+  <!-- Caminhos: ajuste se no seu repositório o nome/pasta for diferente -->
+  ./src/style/style.css
   <link rel="icon" href="./src/icons8-flower-96.pnge>
 
-  <!-- TÍTULO FALLBACK (garante que o nome sempre aparece) -->
+  <!-- Fallback do título (garante que apareça mesmo se o CSS externo falhar) -->
   <style>
     .titulo-animado{
-      position: fixed;
-      top: 25px; left: 50%;
-      transform: translateX(-50%);
-      z-index: 9999;
-      font-size: 48px; font-weight: 700; color: #ffaadf;
-      text-shadow:
-        0 0 6px #ff66c4,
-        0 0 15px #ff2dcf,
-        0 0 30px #ff2dcf,
-        0 0 50px #ff2dcf;
+      position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
+      z-index: 9999; font-size: 48px; font-weight: 700; color: #ffaadf;
+      text-shadow: 0 0 6px #ff66c4, 0 0 15px #ff2dcf, 0 0 30px #ff2dcf, 0 0 50px #ff2dcf;
       animation: neonPulse 2.8s infinite ease-in-out;
+      animation-play-state: running !important;
     }
     @keyframes neonPulse {
-      0%,100%{
-        opacity:.75;
-        text-shadow:
-          0 0 4px #ff66c4,
-          0 0 10px #ff2dcf,
-          0 0 20px #ff2dcf,
-          0 0 30px #ff2dcf;
-      }
-      50%{
-        opacity:1;
-        text-shadow:
-          0 0 10px #ff66c4,
-          0 0 20px #ff2dcf,
-          0 0 40px #ff2dcf,
-          0 0 60px #ff2dcf;
-      }
+      0%,100%{opacity:.75;text-shadow:0 0 4px #ff66c4,0 0 10px #ff2dcf,0 0 20px #ff2dcf,0 0 30px #ff2dcf}
+      50%{opacity:1;text-shadow:0 0 10px #ff66c4,0 0 20px #ff2dcf,0 0 40px #ff2dcf,0 0 60px #ff2dcf}
     }
-
+    /* Garantir camadas corretas */
     .night{z-index:0; pointer-events:none;}
     .flowers{position:relative; z-index:1;}
   </style>
@@ -49,15 +30,14 @@
 
 <body class="container">
 
-  <!-- Nome -->
+  <!-- NOME NO TOPO -->
   <h1 class="titulo-animado">Elivany</h1>
 
-  <!-- Fundo -->
+  <!-- FUNDO -->
   <div class="night"></div>
 
-  <!-- CENA COMPLETA (SEM &lt; &gt;) -->
+  <!-- CENA: por enquanto inclui a primeira flor; você pode colar as demais abaixo -->
   <div class="flowers">
-
     <div class="flower flower--1">
       <div class="flower__leafs flower__leafs--1">
         <div class="flower__leaf flower__leaf--1"></div>
@@ -86,12 +66,12 @@
       </div>
     </div>
 
-    <!-- COLE AQUI O RESTANTE DO SEU HTML DOS FLOWERS (SEM ENTIDADES) -->
-
+    <!-- Cole aqui o restante do seu HTML (flower--2, flower--3, gramíneas etc.) 
+         SEM entidades &lt; &gt; — use <div> ... </div> normais -->
+    <!-- ... -->
   </div>
 
-  <!-- SCRIPT CORRETO -->
+  <!-- Script correto -->
   ./src/js/script.js</script>
-
 </body>
 </html>
