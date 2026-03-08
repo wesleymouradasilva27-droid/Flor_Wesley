@@ -1599,8 +1599,3 @@ body {
 .titulo-animado {
   animation-play-state: running !important;
 }
-
-/* Se quiser manter todas as outras animações pausadas, OK.
-   Se quiser liberar tudo, remova OU comente a regra abaixo:
-   .container * { animation-play-state: paused !important; }
-*/
