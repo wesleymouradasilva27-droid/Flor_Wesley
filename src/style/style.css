@@ -1566,41 +1566,41 @@ body {
     animation-play-state: paused !important;
 }
 
-/* --- Nome com efeito neon rosa --- */
+/* Garantir camadas corretas */
+.night {
+  z-index: 0;              /* fica no fundo */
+  pointer-events: none;    /* não intercepta cliques (opcional) */
+}
+
+.flowers {
+  position: relative;
+  z-index: 1;              /* flores acima do fundo */
+}
+
+/* Título SEMPRE acima de tudo */
 .titulo-animado {
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 48px;
-    font-weight: 700;
-    color: #ffaadf;
-
-    text-shadow: 
-        0 0 6px #ff66c4,
-        0 0 15px #ff2dcf,
-        0 0 30px #ff2dcf,
-        0 0 50px #ff2dcf;
-
-    animation: neonPulse 2.8s infinite ease-in-out;
+  position: fixed;         /* fixa no topo da tela (independe do flex do body) */
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;           /* chave: fica por cima do .night */
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffaadf;
+  text-shadow:
+    0 0 6px #ff66c4,
+    0 0 15px #ff2dcf,
+    0 0 30px #ff2dcf,
+    0 0 50px #ff2dcf;
+  animation: neonPulse 2.8s infinite ease-in-out;
 }
 
-@keyframes neonPulse {
-    0%, 100% {
-        opacity: 0.75;
-        text-shadow:
-            0 0 4px #ff66c4,
-            0 0 10px #ff2dcf,
-            0 0 20px #ff2dcf,
-            0 0 30px #ff2dcf;
-    }
-
-    50% {
-        opacity: 1;
-        text-shadow:
-            0 0 10px #ff66c4,
-            0 0 20px #ff2dcf,
-            0 0 40px #ff2dcf,
-            0 0 60px #ff2dcf;
-    }
+/* Descongele a animação do título, mesmo com o "pausar tudo" */
+.titulo-animado {
+  animation-play-state: running !important;
 }
+
+/* Se quiser manter todas as outras animações pausadas, OK.
+   Se quiser liberar tudo, remova OU comente a regra abaixo:
+   .container * { animation-play-state: paused !important; }
+*/
