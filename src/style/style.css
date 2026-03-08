@@ -1565,3 +1565,42 @@ body {
     -webkit-animation-play-state: paused !important;
     animation-play-state: paused !important;
 }
+
+/* --- Nome com efeito neon rosa --- */
+.titulo-animado {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffaadf;
+
+    text-shadow: 
+        0 0 6px #ff66c4,
+        0 0 15px #ff2dcf,
+        0 0 30px #ff2dcf,
+        0 0 50px #ff2dcf;
+
+    animation: neonPulse 2.8s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        opacity: 0.75;
+        text-shadow:
+            0 0 4px #ff66c4,
+            0 0 10px #ff2dcf,
+            0 0 20px #ff2dcf,
+            0 0 30px #ff2dcf;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow:
+            0 0 10px #ff66c4,
+            0 0 20px #ff2dcf,
+            0 0 40px #ff2dcf,
+            0 0 60px #ff2dcf;
+    }
+}
